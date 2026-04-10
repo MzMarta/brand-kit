@@ -1,0 +1,35 @@
+name: Brand Kit CI
+
+# El "guardia" se activa cuando alguien abre una propuesta de cambio (Pull Request)
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Copiar el código en el servidor de GitHub
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 2. Instalar Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    # 3. Ejecutar el generador de tokens
+    - name: Generate tokens
+      run: python3 scripts/generate_tokens.py
+
+    # 4. Verificar consistencia (git diff)
+    # Si al generar los tokens los archivos de /dist cambian, significa que el 
+    # desarrollador se olvidó de ejecutarlos antes de subir el código.
+    - name: Check if dist is up to date
+      run: git diff --exit-code dist/
+
+    # 5. Ejecutar el Linter de marca
+    - name: Run Brand Linter
+      run: python3 scripts/brand_lint.py
