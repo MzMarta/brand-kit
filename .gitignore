@@ -1,0 +1,10 @@
+# Ignorar documentos internos y confidenciales (REGLA ESTRICTA)
+*.pdf
+docs/internal/**
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependencias (si en el futuro usáis Node para los scripts)
+node_modules/
