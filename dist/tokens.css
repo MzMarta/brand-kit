@@ -1,0 +1,14 @@
+/* Archivo autogenerado a partir de brand.tokens.json */
+:root {
+  --colors-primary-hex: #00529C;
+  --colors-secondary-cyan-hex: #00A3E0;
+  --colors-secondary-darkGray-hex: #333333;
+  --colors-secondary-lightGray-hex: #F4F4F4;
+  --typography-heading-fontFamily: Montserrat, Roboto, sans-serif;
+  --typography-body-fontFamily: Open Sans, Inter, sans-serif;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
