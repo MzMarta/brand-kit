@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navantia COEX - Brand Guidelines</title>
+    <link rel="stylesheet" href="../dist/tokens.css">
+    
+    <style>
+        /* Estilos básicos para que la página se vea bonita */
+        body {
+            font-family: var(--typography-body-fontFamily);
+            color: var(--colors-secondary-darkGray-hex);
+            background-color: var(--colors-secondary-lightGray-hex);
+            margin: 0;
+            padding: 40px;
+        }
+        h1, h2 {
+            font-family: var(--typography-heading-fontFamily);
+            color: var(--colors-primary-hex);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .color-palette {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* Aplicamos los tokens a las cajas de color */
+        .bg-primary { background-color: var(--colors-primary-hex); }
+        .bg-cyan { background-color: var(--colors-secondary-cyan-hex); }
+        .bg-dark { background-color: var(--colors-secondary-darkGray-hex); }
+        
+        .logo-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Identidad Visual: Navantia COEX</h1>
+        <p>Esta página lee los Design Tokens directamente desde nuestro repositorio central.</p>
+
+        <hr>
+
+        <h2>1. Paleta de Colores</h2>
+        <div class="color-palette">
+            <div class="color-box bg-primary">Primario</div>
+            <div class="color-box bg-cyan">Secundario (Cian)</div>
+            <div class="color-box bg-dark">Gris Oscuro</div>
+        </div>
+
+        <h2>2. Tipografía</h2>
+        <div style="margin-bottom: 40px;">
+            <h1 style="margin: 0;">Titular (Heading 1)</h1>
+            <h2 style="margin: 0;">Subtítulo (Heading 2)</h2>
+            <p style="margin-top: 10px;">Este es el cuerpo de texto (Body). Como puedes ver, utiliza la fuente definida en nuestros design tokens, optimizada para facilitar la lectura en pantallas digitales largas.</p>
+        </div>
+
+        <h2>3. Asset Público (Logo/Hero)</h2>
+        <div class="logo-preview">
+            <p>Imagen extraída de <code>/assets/brand/upstream/</code>:</p>
+            <img src="../assets/brand/upstream/navantia-coex-red.jpg" alt="Navantia COEX Hero Image">
+        </div>
+    </div>
+
+</body>
+</html>
