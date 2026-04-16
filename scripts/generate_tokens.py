@@ -46,3 +46,26 @@ with open(TS_FILE, 'w', encoding='utf-8') as f:
     f.write(ts_content)
 
 print("✅ ¡Éxito! Archivos CSS y TS generados en la carpeta dist/")
+
+# 5. Generar configuración para Tailwind CSS (Extensión 1)
+TAILWIND_FILE = os.path.join(DIST_DIR, 'tailwind.config.js')
+
+# Extraemos solo los colores para inyectarlos en Tailwind
+colores_tailwind = json.dumps(tokens.get("colors", {}), indent=4)
+
+tailwind_content = f"""/** @type {{import('tailwindcss').Config}} */
+module.exports = {{
+  content: ["./**/*.{{html,js,ts,jsx,tsx,md}}"],
+  theme: {{
+    extend: {{
+      colors: {colores_tailwind}
+    }}
+  }},
+  plugins: [],
+}}
+"""
+
+with open(TAILWIND_FILE, 'w', encoding='utf-8') as f:
+    f.write(tailwind_content)
+
+print("✅ ¡Extra! Archivo tailwind.config.js generado en dist/")
